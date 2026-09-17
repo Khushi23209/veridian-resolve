@@ -109,43 +109,57 @@ function App() {
       return;
     }
 
-    const userMessage = {
-      role: "user",
-      content: text
-    };
-
-    // Only previous messages are sent as history.
-    // The current message is sent as the current request.
+    // Send only the messages that happened BEFORE the current user message.
+    // The backend receives the current request separately.
     const conversation = messages.map((message) => ({
       role: message.role === "agent" ? "assistant" : "user",
       content: message.content
     }));
 
-    setMessages((current) => [
-      ...current,
-      userMessage
-    ]);
+    const userMessage = {
+      role: "user",
+      content: text
+    };
+
+    setMessages((current) => [...current, userMessage]);
     setIssue("");
     setLoading(true);
 
     try {
       let data;
 
-      const isOriginalSampleRequest =
-        selected && selected.issue.trim() === text && messages.length === 0;
+      const isFirstMessageForSample =
+        Boolean(selected) &&
+        selected.issue?.trim() === text &&
+        messages.length === 0;
 
-      if (isOriginalSampleRequest) {
-        data = await analyzeRequest(
-          selected.id,
-          conversation
-        );
+      if (isFirstMessageForSample) {
+        // First turn: analyze the supplied assignment request directly.
+        data = await analyzeRequest(selected.id, conversation);
       } else if (selected) {
-        // Follow-up to a selected assignment request.
+        // Follow-up: keep the original request identity/employee, but use
+        // the user's latest message as the current issue. This is what lets
+        // questions such as "How do I renew?" stay in the VPN context.
+        const historyText = conversation
+          .map((message) =>
+            `${message.role}: ${message.content}`
+          )
+          .join("\n");
+
         const contextualRequest = {
           ...selected,
+          // Preserve the original request identity and subject so the
+          // evidence search stays anchored to the assignment case.
           issue: text,
-          subject: text,
-          description: text
+          subject: selected.subject || selected.issue,
+          description: [
+            selected.description || selected.issue,
+            historyText
+              ? `Conversation context:\n${historyText}`
+              : ""
+          ]
+            .filter(Boolean)
+            .join("\n\n")
         };
 
         data = await analyzeCustomRequest(
@@ -153,7 +167,7 @@ function App() {
           conversation
         );
       } else {
-        // Completely custom conversation.
+        // Custom issue: create a temporary request for this conversation.
         const customRequest = {
           id: `CUSTOM-${Date.now()}`,
           employee: "Demo User",
@@ -174,8 +188,8 @@ function App() {
       setResult(data);
 
       const responseText =
-        data.response ||
-        data.decision?.message ||
+        data?.response ||
+        data?.decision?.message ||
         "The request has been analyzed.";
 
       setMessages((current) => [
@@ -193,6 +207,7 @@ function App() {
 
       const errorMessage =
         error?.response?.data?.error ||
+        error?.message ||
         "I could not connect to the IT support backend.";
 
       setMessages((current) => [
