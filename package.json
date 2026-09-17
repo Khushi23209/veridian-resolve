@@ -1,0 +1,9 @@
+{
+  "name": "veridian-resolve",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev"
+  }
+}

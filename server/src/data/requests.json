@@ -1,0 +1,17 @@
+[
+  {"id":"REQ-01","employee":"Aditi","email":"aditi@veridian-corp.example","date":"2026-09-21","issue":"My laptop is completely dead and it is about 3.5 years old.","initialAction":"Replacement request"},
+  {"id":"REQ-02","employee":"Vikram","email":"vikram@veridian-corp.example","date":"2026-09-21","issue":"I need guest Wi-Fi for tomorrow.","initialAction":"Guest Wi-Fi"},
+  {"id":"REQ-03","employee":"Karan","email":"karan@veridian-corp.example","date":"2026-09-21","issue":"I am locked out after 6 password attempts.","initialAction":"Password reset"},
+  {"id":"REQ-04","employee":"Ritu","email":"ritu@veridian-corp.example","date":"2026-09-21","issue":"I need a data-analysis tool that is not in the software catalog and it is waiting for Security review.","initialAction":"Software review"},
+  {"id":"REQ-05","employee":"Sanjay Oberoi","email":"sanjay@veridian-corp.example","date":"2026-09-21","issue":"My VPN stopped working this morning, says credentials expired.","initialAction":"VPN"},
+  {"id":"REQ-06","employee":"Meera","email":"meera@veridian-corp.example","date":"2026-09-21","issue":"The printer on the 3rd floor has a paper jam.","initialAction":"Printer"},
+  {"id":"REQ-07","employee":"Farhan","email":"farhan@veridian-corp.example","date":"2026-09-21","issue":"I work from home 4 days a week and need a monitor.","initialAction":"WFH equipment"},
+  {"id":"REQ-08","employee":"Ananya","email":"ananya@veridian-corp.example","date":"2026-09-21","issue":"I received a phishing email asking for my login and I forwarded it to teammates.","initialAction":"Security"},
+  {"id":"REQ-09","employee":"Rohit","email":"rohit@veridian-corp.example","date":"2026-09-21","issue":"My mailbox is full and I cannot send mail.","initialAction":"Mailbox"},
+  {"id":"REQ-10","employee":"Kavya","email":"kavya@veridian-corp.example","date":"2026-09-21","issue":"I need admin access to the finance reporting server urgently for month-end.","initialAction":"Admin access"},
+  {"id":"REQ-11","employee":"Nikhil","email":"nikhil@veridian-corp.example","date":"2026-09-21","issue":"We have a new contractor next week who needs VPN access.","initialAction":"VPN access"},
+  {"id":"REQ-12","employee":"Sneha","email":"sneha@veridian-corp.example","date":"2026-09-21","issue":"My expense software credentials are invalid and I am waiting on the employee response after a screenshot request.","initialAction":"Expense software"},
+  {"id":"REQ-13","employee":"Aman","email":"aman@veridian-corp.example","date":"2026-09-21","issue":"My laptop screen is flickering and the laptop is 2 years old.","initialAction":"Hardware issue"},
+  {"id":"REQ-14","employee":"Tanya","email":"tanya@veridian-corp.example","date":"2026-09-21","issue":"I want to install a non-catalog browser extension for productivity tracking.","initialAction":"Software review"},
+  {"id":"REQ-15","employee":"Rahul","email":"rahul@veridian-corp.example","date":"2026-09-21","issue":"Hey, can you help? It is not working.","initialAction":"Unclassified"}
+]

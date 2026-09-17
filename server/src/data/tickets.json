@@ -1,0 +1,12 @@
+[
+  {"id":"TK-1042","request_id":"HIST-1042","employee":"Historical","category":"VPN","status":"Resolved","closed":true},
+  {"id":"TK-1043","request_id":"HIST-1043","employee":"Historical","category":"Laptop replacement","status":"Approved, pending fulfillment","closed":false},
+  {"id":"TK-1044","request_id":"HIST-1044","employee":"Historical","category":"Non-catalog software","status":"Pending Security review","closed":false},
+  {"id":"TK-1045","request_id":"HIST-1045","employee":"Historical","category":"Mailbox quota increase","status":"Approved at 35GB","closed":true},
+  {"id":"TK-1046","request_id":"HIST-1046","employee":"Historical","category":"Printer paper jam","status":"Resolved","closed":true},
+  {"id":"TK-1047","request_id":"HIST-1047","employee":"Historical","category":"Home office equipment","status":"Pending Finance","closed":false},
+  {"id":"TK-1048","request_id":"HIST-1048","employee":"Historical","category":"Phishing email","status":"Escalated to Security, under investigation","closed":false},
+  {"id":"TK-1049","request_id":"HIST-1049","employee":"Historical","category":"Password reset","status":"Resolved","closed":true},
+  {"id":"TK-1050","request_id":"HIST-1050","employee":"Historical","category":"Admin access request","status":"Rejected, no business justification","closed":true},
+  {"id":"TK-1051","request_id":"HIST-1051","employee":"Historical","category":"Guest Wi-Fi","status":"Resolved","closed":true}
+]
